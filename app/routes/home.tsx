@@ -2,10 +2,12 @@ import type { Route } from "./+types/home";
 
 export const meta: Route.MetaFunction = () => [{ title: "Anna Wilson" }];
 
+const asset = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\//, "")}`;
+
 const POSTS = [
-  { src: "/instagram/post-1.webp", rotate: -3, left: "6%", top: "20%" },
-  { src: "/instagram/post-2.webp", rotate: 2, left: "37.5%", top: "20%" },
-  { src: "/instagram/post-3.webp", rotate: -1.5, left: "69%", top: "20%" },
+  { src: asset("/instagram/post-1.webp"), rotate: -3, left: "6%", top: "20%" },
+  { src: asset("/instagram/post-2.webp"), rotate: 2, left: "37.5%", top: "20%" },
+  { src: asset("/instagram/post-3.webp"), rotate: -1.5, left: "69%", top: "20%" },
 ];
 
 type Sticker = {
@@ -16,21 +18,21 @@ type Sticker = {
 };
 
 const HERO_STICKERS: Sticker[] = [
-  { src: "/stickers/starsticker3.webp", w: 96, r: -18, pos: { left: "3%", top: "10%" } },
-  { src: "/stickers/sparkle.webp", w: 140, r: 8, pos: { left: "42%", top: "4%" } },
-  { src: "/stickers/heart.webp", w: 72, r: 12, pos: { right: "23%", top: "6%" } },
-  { src: "/stickers/lips.webp", w: 56, r: -16, pos: { left: "54%", bottom: "6%" } },
-  { src: "/stickers/starsticker6.webp", w: 60, r: 22, pos: { right: "4%", bottom: "26%" } },
-  { src: "/stickers/exclaim.webp", w: 50, r: -8, pos: { left: "8%", top: "34%" } },
-  { src: "/stickers/yinyang.webp", w: 60, r: 16, pos: { right: "16%", bottom: "6%" } },
-  { src: "/stickers/ghost.webp", w: 70, r: -10, pos: { left: "1.5%", bottom: "20%" } },
+  { src: asset("/stickers/starsticker3.webp"), w: 96, r: -18, pos: { left: "3%", top: "10%" } },
+  { src: asset("/stickers/sparkle.webp"), w: 140, r: 8, pos: { left: "42%", top: "4%" } },
+  { src: asset("/stickers/heart.webp"), w: 72, r: 12, pos: { right: "23%", top: "6%" } },
+  { src: asset("/stickers/lips.webp"), w: 56, r: -16, pos: { left: "54%", bottom: "6%" } },
+  { src: asset("/stickers/starsticker6.webp"), w: 60, r: 22, pos: { right: "4%", bottom: "26%" } },
+  { src: asset("/stickers/exclaim.webp"), w: 50, r: -8, pos: { left: "8%", top: "34%" } },
+  { src: asset("/stickers/yinyang.webp"), w: 60, r: 16, pos: { right: "16%", bottom: "6%" } },
+  { src: asset("/stickers/ghost.webp"), w: 70, r: -10, pos: { left: "1.5%", bottom: "20%" } },
 ];
 
 const IG_STICKERS: Sticker[] = [
-  { src: "/stickers/starsticker1.webp", w: 84, r: 14, pos: { left: "2%", top: "12%" } },
-  { src: "/stickers/smiley.webp", w: 70, r: -12, pos: { right: "4%", top: "18%" } },
-  { src: "/stickers/sweet.webp", w: 88, r: 10, pos: { left: "46%", bottom: "6%" } },
-  { src: "/stickers/sparkle.webp", w: 130, r: -6, pos: { right: "10%", bottom: "10%" } },
+  { src: asset("/stickers/starsticker1.webp"), w: 84, r: 14, pos: { left: "2%", top: "12%" } },
+  { src: asset("/stickers/smiley.webp"), w: 70, r: -12, pos: { right: "4%", top: "18%" } },
+  { src: asset("/stickers/sweet.webp"), w: 88, r: 10, pos: { left: "46%", bottom: "6%" } },
+  { src: asset("/stickers/sparkle.webp"), w: 130, r: -6, pos: { right: "10%", bottom: "10%" } },
 ];
 
 function Doodle({ src, w, r, pos }: Sticker) {
@@ -134,7 +136,7 @@ export default function Home() {
       </nav>
 
       <section className="home__hero">
-        <img className="home__rip" src="/smiley-top.webp" alt="" />
+        <img className="home__rip" src={asset("/smiley-top.webp")} alt="" />
         <div className="decor" aria-hidden="true">
           {HERO_STICKERS.map((s, i) => (
             <Doodle key={i} {...s} />
@@ -142,7 +144,7 @@ export default function Home() {
         </div>
         <div className="home__container">
           <div className="home__core">
-            <img className="home__title-art" src="/title-ripped.webp" alt="Sequin Polarbears" />
+            <img className="home__title-art" src={asset("/title-ripped.webp")} alt="Sequin Polarbears" />
 
             <div className="home__note">
               <p>
@@ -155,7 +157,7 @@ export default function Home() {
 
           <div className="home__scatter">
             <div className="home__sticker-wrap">
-              <img className="home__sticker" src="/sticker.webp" alt="" />
+              <img className="home__sticker" src={asset("/sticker.webp")} alt="" />
               <div className="home__cut">
                 <span className="home__cut-text">
                   turning dreams
@@ -172,7 +174,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/photo-brenda.webp" alt="Brenda Bressed, Drag Race Down Under" loading="lazy" />
+                <img src={asset("/photo-brenda.webp")} alt="Brenda Bressed, Drag Race Down Under" loading="lazy" />
               </a>
               <a
                 className="home__photo home__photo--opal"
@@ -180,7 +182,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/photo-opal.webp" alt="Opal photobooth strip" loading="lazy" />
+                <img src={asset("/photo-opal.webp")} alt="Opal photobooth strip" loading="lazy" />
               </a>
             </div>
           </div>
@@ -188,7 +190,7 @@ export default function Home() {
       </section>
       <section className="home__image">
         <div className="home__scrap">
-          <img className="home__rip" src="/smiley-bottom.webp" alt="" />
+          <img className="home__rip" src={asset("/smiley-bottom.webp")} alt="" />
           <div className="decor" aria-hidden="true">
             {IG_STICKERS.map((s, i) => (
               <Doodle key={i} {...s} />
@@ -208,11 +210,11 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <img className="home__rip home__rip--bleed" src="/smiley-2-top.webp" alt="" />
+          <img className="home__rip home__rip--bleed" src={asset("/smiley-2-top.webp")} alt="" />
         </div>
       </section>
       <section className="home__next">
-        <img className="home__rip" src="/smiley-2-bottom.webp" alt="" />
+        <img className="home__rip" src={asset("/smiley-2-bottom.webp")} alt="" />
       </section>
     </main>
   );

@@ -16,9 +16,6 @@
   --font-body: "Cabin", system-ui, sans-serif;
 
   --tear-h: 140px;
-  --tear-b: url("/tear-paper.png");
-  --tear-rim: url("/tear-rim.png");
-  --crumple-light: url("/crumple-light.webp");
 }
 
 body {

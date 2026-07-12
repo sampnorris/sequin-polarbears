@@ -11,8 +11,14 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const assetVars = {
+    "--tear-b": `url("${import.meta.env.BASE_URL}tear-paper.png")`,
+    "--tear-rim": `url("${import.meta.env.BASE_URL}tear-rim.png")`,
+    "--crumple-light": `url("${import.meta.env.BASE_URL}crumple-light.webp")`,
+  } as React.CSSProperties;
+
   return (
-    <html lang="en">
+    <html lang="en" style={assetVars}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
