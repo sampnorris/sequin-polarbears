@@ -1,0 +1,27 @@
+{
+  "name": "site-2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "preview": "sirv build/client --single",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@react-router/node": "8.0.0",
+    "isbot": "^5.1.36",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "8.0.0"
+  },
+  "devDependencies": {
+    "@react-router/dev": "8.0.0",
+    "@types/node": "^22",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "sirv-cli": "^3.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.3"
+  }
+}
